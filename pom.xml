@@ -41,6 +41,13 @@
 
 		<dependency>
 			<groupId>org.matsim.contrib</groupId>
+			<artifactId>application</artifactId>
+			<version>${matsim.version}</version>
+			<scope>compile</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>org.matsim.contrib</groupId>
 			<artifactId>dvrp</artifactId>
 			<version>${matsim.version}</version>
 			<scope>compile</scope>
