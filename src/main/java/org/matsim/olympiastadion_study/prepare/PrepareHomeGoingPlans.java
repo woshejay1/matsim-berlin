@@ -126,7 +126,7 @@ public class PrepareHomeGoingPlans implements MATSimAppCommand {
             Activity footballGameActivity = populationFactory.createActivityFromCoord("dummy", OLYMPIASTADION_COORD);
             footballGameActivity.setEndTime(departureTime);
             Leg leg = populationFactory.createLeg(TransportMode.pt);
-            Activity home = populationFactory.createActivityFromLinkId("dummy", homeLink.getId());
+            Activity home = populationFactory.createActivityFromCoord("dummy", homeLink.getToNode().getCoord());
             Plan plan = populationFactory.createPlan();
 
             plan.addActivity(footballGameActivity);

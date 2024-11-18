@@ -15,8 +15,8 @@ public class RunWithTestingPlans {
 		Config config = ConfigUtils.createConfig();
 		config.network().setInputFile("https://svn.vsp.tu-berlin.de/repos/public-svn/matsim/scenarios/countries/de/berlin/berlin-v5.5-10pct/input/berlin-v5.5-network.xml.gz");
 		config.plans().setInputFile("/Users/luchengqi/Documents/MATSimScenarios/Berlin/olympiastadion-study/testing-1000-fans.plans.xml.gz");
-		config.transit().setTransitScheduleFile("https://svn.vsp.tu-berlin.de/repos/public-svn/matsim/scenarios/countries/de/berlin/berlin-v5.5-10pct/input/berlin-v5.5-transitSchedule.xml.gz");
-		config.transit().setVehiclesFile("https://svn.vsp.tu-berlin.de/repos/public-svn/matsim/scenarios/countries/de/berlin/berlin-v5.5-10pct/input/berlin-v5.5-transitVehicles.xml.gz");
+		config.transit().setTransitScheduleFile("https://svn.vsp.tu-berlin.de/repos/public-svn/matsim/scenarios/countries/de/berlin/berlin-v5.5-10pct/input/berlin-v5.5-transit-schedule.xml.gz");
+		config.transit().setVehiclesFile("https://svn.vsp.tu-berlin.de/repos/public-svn/matsim/scenarios/countries/de/berlin/berlin-v5.5-10pct/input/berlin-v5.5-transit-vehicles.xml.gz");
 		config.transit().setUseTransit(true);
 
 		config.qsim().setFlowCapFactor(1.0);
@@ -31,7 +31,7 @@ public class RunWithTestingPlans {
 		config.strategy().addStrategySettings(
 			new StrategyConfigGroup.StrategySettings()
 				.setStrategyName(DefaultPlanStrategiesModule.DefaultSelector.ChangeExpBeta)
-				.setWeight(0.7)
+				.setWeight(0.9)
 		);
 
 		config.strategy().addStrategySettings(
@@ -43,13 +43,13 @@ public class RunWithTestingPlans {
 		config.strategy().addStrategySettings(
 			new StrategyConfigGroup.StrategySettings()
 				.setStrategyName(DefaultPlanStrategiesModule.DefaultStrategy.TimeAllocationMutator)
-				.setWeight(0.1)
+				.setWeight(0)
 		);
 
 		config.strategy().addStrategySettings(
 			new StrategyConfigGroup.StrategySettings()
 				.setStrategyName(DefaultPlanStrategiesModule.DefaultStrategy.ChangeSingleTripMode)
-				.setWeight(0.1)
+				.setWeight(0)
 		);
 
 		config.controler().setLastIteration(1);
