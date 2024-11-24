@@ -16,7 +16,7 @@ import org.matsim.vehicles.Vehicles;
 public class PrepareBaseSchedule {
     public static void main(String[] args) {
         Config config = ConfigUtils.loadConfig("G:/matsim-berlin/scenarios/berlin-v5.5-10pct/input/berlin-v5.5-10pct.config.xml");
-        config.plans().setInputFile("G:/Masterarbeit/Plan/testing-1000-fans.plans.xml.gz");
+        config.plans().setInputFile("G:/Masterarbeit/Plan/3.0/testing-50000-fans-12pm.plans.xml.gz");
         config.transit().setTransitScheduleFile("G:/Masterarbeit/Version5.6.1/intermediate_transitSchedule.xml");
         config.transit().setVehiclesFile("https://svn.vsp.tu-berlin.de/repos/public-svn/matsim/scenarios/countries/de/berlin/berlin-v5.5-10pct/input/berlin-v5.5-transit-vehicles.xml.gz");
         config.network().setInputFile("G:/Masterarbeit/Version5.6.1/updated_network.xml");

@@ -6,7 +6,6 @@ import org.matsim.core.population.routes.NetworkRoute;
 import org.matsim.core.population.routes.RouteUtils;
 import org.matsim.pt.transitSchedule.api.*;
 import org.matsim.vehicles.Vehicles;
-import org.matsim.vehicles.VehiclesFactory;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -18,7 +17,7 @@ public class S3GamedaySchedule {
     public static void prepare(Scenario scenario, TransitSchedule transitSchedule, Vehicles transitVehicles) {
 
         TransitScheduleFactory transitScheduleFactory = transitSchedule.getFactory();
-        VehiclesFactory vehiclesFactory = transitVehicles.getFactory();
+
 
         // prepare s3 gameday schedule
         TransitLine s3Transitline = transitSchedule.getTransitLines().get(Id.create("S3---10148_109", TransitLine.class));
@@ -57,7 +56,7 @@ public class S3GamedaySchedule {
         TransitRoute s3GamedayRoute12 = transitScheduleFactory.createTransitRoute(s3GamedayRoute12Id, s3GamedayNetworkRoute12, s3GamedayStops12, "rail");
         //create depature
         createDepartures(s3GamedayRoute12, transitSchedule, transitVehicles,
-                17 * 3600 + 15 * 60, 30 * 3600, 1200,
+                11 * 3600 + 15 * 60, 72 * 3600, 1200,
                 "950826_", "pt_S3---10148_109_12_", "S-Bahn_veh_type");
 
 
@@ -95,7 +94,7 @@ public class S3GamedaySchedule {
         TransitRoute s3GamedayRoute13 = transitScheduleFactory.createTransitRoute(s3GamedayRoute13Id, s3GamedayNetworkRoute13, s3GamedayStops13, "rail");
         //create depatures
         createDepartures(s3GamedayRoute13, transitSchedule, transitVehicles,
-                17 * 3600 + 15 * 60, 30 * 3600, 1200,
+                11 * 3600 + 15 * 60, 72 * 3600, 1200,
                 "950827_", "pt_S3---10148_109_13_", "S-Bahn_veh_type");
 
         s3Transitline.addRoute(s3GamedayRoute12);

@@ -6,7 +6,6 @@ import org.matsim.core.population.routes.NetworkRoute;
 import org.matsim.core.population.routes.RouteUtils;
 import org.matsim.pt.transitSchedule.api.*;
 import org.matsim.vehicles.Vehicles;
-import org.matsim.vehicles.VehiclesFactory;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -17,7 +16,7 @@ public class S5GamedaySchedule {
     public static void prepare(Scenario scenario, TransitSchedule transitSchedule, Vehicles transitVehicles) {
 
         TransitScheduleFactory transitScheduleFactory = transitSchedule.getFactory();
-        VehiclesFactory vehiclesFactory = transitVehicles.getFactory();
+
 
         // prepare s5 gameday schedule
         TransitLine s5Transitline = transitSchedule.getTransitLines().get(Id.create("S5---10157_109", TransitLine.class));
@@ -133,7 +132,7 @@ public class S5GamedaySchedule {
         TransitRoute s5GamedayRoute13 = transitScheduleFactory.createTransitRoute(s5GamedayRoute13Id, s5GamedayNetworkRoute13, s5GamedayStops13, "rail");
         //create depatures
         createDepartures(s5GamedayRoute13, transitSchedule, transitVehicles,
-                17 * 3600 + 7 * 60, 30 * 3600, 600,
+                11 * 3600 + 7 * 60, 72 * 3600, 600,
                 "950828_", "pt_S5---10157_109_13_", "S-Bahn_veh_type");
 
         //create network routes
@@ -248,17 +247,17 @@ public class S5GamedaySchedule {
         //create complete route
         TransitRoute s5GamedayRoute14 = transitScheduleFactory.createTransitRoute(s5GamedayRoute40Id, s5GamedayNetworkRoute14, s5GamedayStops14, "rail");
         createDepartures(s5GamedayRoute14, transitSchedule, transitVehicles,
-                17 * 3600 + 7 * 60, 30 * 3600, 600,
+                11 * 3600 + 7 * 60, 72 * 3600, 600,
                 "950829_", "pt_S5---10157_109_14_", "S-Bahn_veh_type");
 
 
-        //remove Depature from 17:00-30:00
+        //remove Depature from 11:00-72:00
         TransitRoute s5transitRoute6 = s5Transitline.getRoutes().get(Id.create("S5---10157_109_6", TransitRoute.class));
-        removeDeparturesWithinTimeRange(s5transitRoute6, 17 * 3600, 30 * 3600);
+        removeDeparturesWithinTimeRange(s5transitRoute6, 11 * 3600, 72 * 3600);
 
-        //remove Depature from 17:00-30:00
+        //remove Depature from 11:00-72:00
         TransitRoute s5transitRoute12 = s5Transitline.getRoutes().get(Id.create("S5---10157_109_12", TransitRoute.class));
-        removeDeparturesWithinTimeRange(s5transitRoute12, 17 * 3600, 30 * 3600);
+        removeDeparturesWithinTimeRange(s5transitRoute12, 11 * 3600, 72 * 3600);
 
 
         s5Transitline.addRoute(s5GamedayRoute13);

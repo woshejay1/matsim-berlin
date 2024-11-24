@@ -18,20 +18,20 @@ public class U2GamedaySchedule {
         //Adjust Route 10 Ruhleben-Pankow
         TransitRoute u2GamedayRoute10 = u2Transitline.getRoutes().get(Id.create("U2---17514_400_10", TransitRoute.class));
         //remove Depature
-        removeDeparturesWithinTimeRange(u2GamedayRoute10, 17 * 3600, 30 * 3600);
+        removeDeparturesWithinTimeRange(u2GamedayRoute10, 0 * 3600, 100 * 3600);
         //create Depature
         createDepartures(u2GamedayRoute10, transitSchedule, transitVehicles,
-                17 * 3600 + 2 * 60, 30 * 3600, 180,
+                11 * 3600 + 2 * 60, 100 * 3600, 180,
                 "950830_", "pt_U2---17514_400_10_", "U-Bahn_veh_type");
 
 
         //Adjust Route 23 Pankow-Ruhleben
         TransitRoute u2GamedayRoute23 = u2Transitline.getRoutes().get(Id.create("U2---17514_400_23", TransitRoute.class));
         //remove Depature
-        removeDeparturesWithinTimeRange(u2GamedayRoute23, 17 * 3600, 30 * 3600);
+        removeDeparturesWithinTimeRange(u2GamedayRoute23, 0 * 3600, 100 * 3600);
         //create Depature
         createDepartures(u2GamedayRoute23, transitSchedule, transitVehicles,
-                17 * 3600 + 2 * 60, 30 * 3600, 180,
+                11 * 3600 + 2 * 60, 100 * 3600, 180,
                 "950831_", "pt_U2---17514_400_23_", "U-Bahn_veh_type");
 
 

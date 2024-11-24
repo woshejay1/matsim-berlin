@@ -57,12 +57,11 @@ public class Utilities {
                         vehiclesFactory.createVehicle(vehicleId,
                                 transitVehicles.getVehicleTypes().get(Id.create(vehicleTypeIdString, VehicleType.class))
                         ));
-                departure.setVehicleId(vehicleId);
-                transitRoute.addDeparture(departure);
-                departureCounter++;
             }
+            departure.setVehicleId(vehicleId);
+            transitRoute.addDeparture(departure);
+            departureCounter++;
 
         }
-
     }
 }

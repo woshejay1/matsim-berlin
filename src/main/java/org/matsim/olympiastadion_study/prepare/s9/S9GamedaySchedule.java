@@ -15,21 +15,21 @@ public class S9GamedaySchedule {
 
 
         TransitRoute s9GamedayRoute4 = s9Transitline.getRoutes().get(Id.create("S9---10170_109_4", TransitRoute.class));
-        //remove Depature for Route 4 from 17:00-30:00(Spandau-Flughafen)
-        removeDeparturesWithinTimeRange(s9GamedayRoute4, 17 * 3600, 30 * 3600);
+        //remove Depature for Route 4(Spandau-Flughafen)
+        removeDeparturesWithinTimeRange(s9GamedayRoute4, 0 * 3600, 72 * 3600);
         //create Depature
         createDepartures(s9GamedayRoute4, transitSchedule, transitVehicles,
-                17 * 3600 + 9 * 60, 30 * 3600, 600,
+                11 * 3600 + 9 * 60, 72 * 3600, 600,
                 "950832_", "pt_S9---10170_109_4_", "S-Bahn_veh_type");
 
 
         //remove Depature for Route 8 from 17:00-30:00(Flughafen-Spandau)
         TransitRoute s9transitRoute8 = s9Transitline.getRoutes().get(Id.create("S9---10170_109_8", TransitRoute.class));
         //remove Depature Flughafen-Spandau
-        removeDeparturesWithinTimeRange(s9transitRoute8, 17 * 3600, 30 * 3600);
+        removeDeparturesWithinTimeRange(s9transitRoute8, 0 * 3600, 72 * 3600);
         //create Depature Spandau-Flughafen
         createDepartures(s9transitRoute8, transitSchedule, transitVehicles,
-                17 * 3600 + 9 * 60, 30 * 3600, 600,
+                11 * 3600 + 9 * 60, 72 * 3600, 600,
                 "950833_", "pt_S9---10170_109_8_", "S-Bahn_veh_type");
 
     }
