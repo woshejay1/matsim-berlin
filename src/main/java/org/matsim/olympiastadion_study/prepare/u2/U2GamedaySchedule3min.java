@@ -1,13 +1,15 @@
 package org.matsim.olympiastadion_study.prepare.u2;
 
 import org.matsim.api.core.v01.Id;
-import org.matsim.pt.transitSchedule.api.*;
+import org.matsim.pt.transitSchedule.api.TransitLine;
+import org.matsim.pt.transitSchedule.api.TransitRoute;
+import org.matsim.pt.transitSchedule.api.TransitSchedule;
 import org.matsim.vehicles.Vehicles;
 
 import static org.matsim.olympiastadion_study.prepare.Utilities.createDepartures;
 import static org.matsim.olympiastadion_study.prepare.Utilities.removeDeparturesWithinTimeRange;
 
-public class U2GamedaySchedule {
+public class U2GamedaySchedule3min {
     public static void prepare(TransitSchedule transitSchedule, Vehicles transitVehicles) {
 
 
@@ -32,22 +34,26 @@ public class U2GamedaySchedule {
         createDepartures(u2GamedayRoute10, transitSchedule, transitVehicles,
                 9 * 3600 + 43 * 60, 12 * 3600 + 03 * 60, 600,
                 "950830_", "pt_U2---17514_400_10_", "U-Bahn_veh_type", 34);
-        //12:08-14:03(After Game) interval: 5 min
+        //12:13-13:13(After Game) interval: 3 min
         createDepartures(u2GamedayRoute10, transitSchedule, transitVehicles,
-                12 * 3600 + 8 * 60, 14 * 3600 + 3 * 60, 300,
+                12 * 3600 + 13 * 60, 13 * 3600 + 13 * 60, 180,
                 "950830_", "pt_U2---17514_400_10_", "U-Bahn_veh_type", 49);
-        //14:12-18:33 interval: 9 min
+        //13:23-13:53(After Game) interval: 10 min
         createDepartures(u2GamedayRoute10, transitSchedule, transitVehicles,
-                14 * 3600 + 12 * 60, 18 * 3600 + 33 * 60, 540,
-                "950830_", "pt_U2---17514_400_10_", "U-Bahn_veh_type", 73);
+                13 * 3600 + 23 * 60, 13 * 3600 + 53 * 60, 600,
+                "950830_", "pt_U2---17514_400_10_", "U-Bahn_veh_type", 70);
+        //14:03-18:33 interval: 9 min
+        createDepartures(u2GamedayRoute10, transitSchedule, transitVehicles,
+                14 * 3600 + 3 * 60, 18 * 3600 + 33 * 60, 540,
+                "950830_", "pt_U2---17514_400_10_", "U-Bahn_veh_type", 74);
         //18:43-25:43 interval: 10 min
         createDepartures(u2GamedayRoute10, transitSchedule, transitVehicles,
                 18 * 3600 + 43 * 60, 25 * 3600 + 43 * 60, 600,
-                "950830_", "pt_U2---17514_400_10_", "U-Bahn_veh_type", 103);
+                "950830_", "pt_U2---17514_400_10_", "U-Bahn_veh_type", 105);
         //25:58-30:00 interval: 15 min
         createDepartures(u2GamedayRoute10, transitSchedule, transitVehicles,
                 25 * 3600 + 58 * 60, 30 * 3600 + 0 * 60, 900,
-                "950830_", "pt_U2---17514_400_10_", "U-Bahn_veh_type", 146);
+                "950830_", "pt_U2---17514_400_10_", "U-Bahn_veh_type", 148);
 
 
         //Adjust Route 13 Theodor-Heuss-Platz-Pankow
@@ -76,23 +82,6 @@ public class U2GamedaySchedule {
                 18 * 3600 + 44 * 60, 22 * 3600 + 34 * 60, 600,
                 "950831_", "pt_U2---17514_400_13_", "U-Bahn_veh_type", 69);
 
-
-
-
-
-
-
-
-
-
-//        //Adjust Route 23 Pankow-Ruhleben
-//        TransitRoute u2GamedayRoute23 = u2Transitline.getRoutes().get(Id.create("U2---17514_400_23", TransitRoute.class));
-//        //remove Depature
-//        removeDeparturesWithinTimeRange(u2GamedayRoute23, 0 * 3600, 100 * 3600);
-//        //create Depature
-//        createDepartures(u2GamedayRoute23, transitSchedule, transitVehicles,
-//                11 * 3600 + 2 * 60, 15 * 3600, 180,
-//                "950831_", "pt_U2---17514_400_23_", "U-Bahn_veh_type", 0);
 
 
     }

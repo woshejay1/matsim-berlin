@@ -9,6 +9,7 @@ import org.matsim.core.controler.Controler;
 import org.matsim.core.controler.OutputDirectoryHierarchy;
 import org.matsim.core.replanning.strategies.DefaultPlanStrategiesModule;
 import org.matsim.core.scenario.ScenarioUtils;
+import org.matsim.pt.config.TransitConfigGroup;
 
 public class RunWithTestingPlans {
 	public static void main(String[] args) {
@@ -23,6 +24,7 @@ public class RunWithTestingPlans {
 		config.transit().setVehiclesFile("G:/Masterarbeit/Version5.6.1/base_transitVehicles.xml");
 		config.plans().setInputFile("G:/Masterarbeit/Plan/3.0/testing-50000-fans-12pm.plans.xml.gz");
 		config.transit().setUseTransit(true);
+		config.transit().setBoardingAcceptance(TransitConfigGroup.BoardingAcceptance.checkStopOnly);
 
 		config.qsim().setFlowCapFactor(1.0);
 		config.qsim().setStorageCapFactor(1.0);
@@ -60,7 +62,7 @@ public class RunWithTestingPlans {
 
 		config.controler().setLastIteration(1);
 		config.controler().setOverwriteFileSetting(OutputDirectoryHierarchy.OverwriteFileSetting.overwriteExistingFiles);
-		config.controler().setOutputDirectory("G:/Masterarbeit/Output/Testing/dummy-test-5.6.1/3.0/50000fans/Gameday");
+		config.controler().setOutputDirectory("G:/Masterarbeit/Output/Testing/dummy-test-5.6.1/Gameday/Plan8");
 
 		Scenario scenario = ScenarioUtils.loadScenario(config);
 		Controler controler = new Controler(scenario);

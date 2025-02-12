@@ -31,8 +31,8 @@ public class PrepareNetworkAndStops {
         String inputTransitScheduleFile = "https://svn.vsp.tu-berlin.de/repos/public-svn/matsim/scenarios/countries/de/berlin/berlin-v5.5-10pct/input/berlin-v5.5-transit-schedule.xml.gz";
         config.transit().setTransitScheduleFile(inputTransitScheduleFile);
 
-        // Using the Plan-1000 Fans
-        String inputPlansFile = "G:/Masterarbeit/Plan/testing-1000-fans.plans.xml.gz";
+        // Using the Plan-50000 Fans
+        String inputPlansFile = "G:/Masterarbeit/Plan/3.0/testing-50000-fans-12pm.plans.xml.gz";
         config.plans().setInputFile(inputPlansFile);
 
         Scenario scenario = ScenarioUtils.loadScenario(config);
