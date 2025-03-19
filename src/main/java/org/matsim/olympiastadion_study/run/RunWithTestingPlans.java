@@ -14,14 +14,14 @@ public class RunWithTestingPlans {
     public static void main(String[] args) {
         Config config = ConfigUtils.createConfig();
         config.network().setInputFile("https://svn.vsp.tu-berlin.de/repos/public-svn/matsim/scenarios/countries/de/berlin/berlin-v5.5-10pct/input/berlin-v5.5-network.xml.gz");
-        config.plans().setInputFile("/Users/luchengqi/Documents/MATSimScenarios/Berlin/olympiastadion-study/testing-10000-fans-12pm.plans.xml.gz");
+        config.plans().setInputFile("/Users/luchengqi/Documents/MATSimScenarios/Berlin/olympiastadion-study/5000-fans-12pm.plans.xml.gz");
         config.transit().setTransitScheduleFile("https://svn.vsp.tu-berlin.de/repos/public-svn/matsim/scenarios/countries/de/berlin/berlin-v5.5-10pct/input/berlin-v5.5-transit-schedule.xml.gz");
         config.transit().setVehiclesFile("https://svn.vsp.tu-berlin.de/repos/public-svn/matsim/scenarios/countries/de/berlin/berlin-v5.5-10pct/input/berlin-v5.5-transit-vehicles.xml.gz");
         config.transit().setUseTransit(true);
 
         config.controler().setLastIteration(0);
         config.controler().setOverwriteFileSetting(OutputDirectoryHierarchy.OverwriteFileSetting.overwriteExistingFiles);
-        config.controler().setOutputDirectory("/Users/luchengqi/Documents/MATSimScenarios/Berlin/olympiastadion-study/output/test-10000-agents-12pm");
+        config.controler().setOutputDirectory("/Users/luchengqi/Documents/MATSimScenarios/Berlin/olympiastadion-study/output/test-5000-agents-12pm");
 
         config.qsim().setFlowCapFactor(1.0);
         config.qsim().setStorageCapFactor(1.0);
