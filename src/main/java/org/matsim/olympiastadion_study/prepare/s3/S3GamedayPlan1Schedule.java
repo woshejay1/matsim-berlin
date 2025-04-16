@@ -20,7 +20,7 @@ public class S3GamedayPlan1Schedule {
         //create Depature
         //12:23-14:00 interval: 10 min
         createDepartures(s3GamedayRoute3, transitSchedule, transitVehicles,
-                12 * 3600 + 13 * 60, 14 * 3600 + 13 * 60, 600,
+                12 * 3600 + 03 * 60, 14 * 3600, 600,
                 "s3GamedayPlan1_", "pt_S3---10148_109_3_", "S-Bahn_veh_type", 0);
 
 

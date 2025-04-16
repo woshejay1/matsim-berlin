@@ -22,7 +22,7 @@ public class RunWithTestingPlans {
 		config.network().setInputFile("G:/Masterarbeit/Version5.6.1/updated_network.xml");
 		config.transit().setTransitScheduleFile("G:/Masterarbeit/Version5.6.1/base_transitSchedule.xml");
 		config.transit().setVehiclesFile("G:/Masterarbeit/Version5.6.1/base_transitVehicles.xml");
-		config.plans().setInputFile("G:/Masterarbeit/Plan/3.0/testing-50000-fans-12pm.plans.xml.gz");
+		config.plans().setInputFile("G:/Masterarbeit/Plan/2.0/50000-fans-12pm-new.plans.xml.gz");
 		config.transit().setUseTransit(true);
 		config.transit().setBoardingAcceptance(TransitConfigGroup.BoardingAcceptance.checkStopOnly);
 
@@ -62,7 +62,7 @@ public class RunWithTestingPlans {
 
 		config.controler().setLastIteration(1);
 		config.controler().setOverwriteFileSetting(OutputDirectoryHierarchy.OverwriteFileSetting.overwriteExistingFiles);
-		config.controler().setOutputDirectory("G:/Masterarbeit/Output/Testing/dummy-test-5.6.1/Gameday/Plan8");
+		config.controler().setOutputDirectory("G:/Masterarbeit/Output/Testing/dummy-test-5.6.1/Gameday2.0/Ostbahnhof");
 
 		Scenario scenario = ScenarioUtils.loadScenario(config);
 		Controler controler = new Controler(scenario);

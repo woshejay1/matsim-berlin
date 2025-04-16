@@ -13,7 +13,7 @@ import java.util.List;
 import static org.matsim.olympiastadion_study.prepare.Utilities.createDepartures;
 import static org.matsim.olympiastadion_study.prepare.Utilities.createTransitRouteStop;
 
-public class S3GamedayPlan6Schedule {
+public class S3GamedayOstbahnhofSchedule {
     public static void prepare(Scenario scenario, TransitSchedule transitSchedule, Vehicles transitVehicles) {
 
         TransitScheduleFactory transitScheduleFactory = transitSchedule.getFactory();
@@ -38,11 +38,15 @@ public class S3GamedayPlan6Schedule {
                         Id.createLinkId("pt_42518"), //S Savignyplatz-S+U Zoologischer Garten Bhf
                         Id.createLinkId("pt_42519"), //S+U Zoologischer Garten Bhf-S Tiergarten
                         Id.createLinkId("pt_42520"), //S Tiergarten-S Bellevue
-                        Id.createLinkId("pt_42521") //S Bellevue-S+U Berlin Hauptbahnhof
+                        Id.createLinkId("pt_42521"), //S Bellevue-S+U Berlin Hauptbahnhof
+                        Id.createLinkId("pt_42522"), //S+U Berlin Hauptbahnhof-S+U Friedrichstr.Bhf
+                        Id.createLinkId("pt_42523"), //S+U Friedrichstr.Bhf-S Hackescher Markt
+                        Id.createLinkId("pt_42524"), //S Hackescher Markt-S+U Alexanderplatz Bhf
+                        Id.createLinkId("pt_42525") //S+U Alexanderplatz Bhf-S+U Jannowitzbruecke
 
 
                 ),
-                Id.createLinkId("pt_42522") //S+U Berlin Hauptbahnhof-S+U Friedrichstr.Bhf
+                Id.createLinkId("pt_42526") //S+U Jannowitzbruecke-S Ostbahnhof
         );
 
 
@@ -66,15 +70,22 @@ public class S3GamedayPlan6Schedule {
                 1080.0d, 1140.0d)); //S+U Berlin Hauptbahnhof
         s3GamedayStops12.add(createTransitRouteStop(scenario, Id.create("060100001755", TransitStopFacility.class),
                 1260.0d, 1260.0d)); //S+U Friedrichstr.Bhf
-
+        s3GamedayStops12.add(createTransitRouteStop(scenario, Id.create("060100002733", TransitStopFacility.class),
+                1380.0d, 1440.0d)); //S Hackescher Markt
+        s3GamedayStops12.add(createTransitRouteStop(scenario, Id.create("060100003723", TransitStopFacility.class),
+                1500.0d, 1500.0d)); //S+U Alexanderplatz Bhf
+        s3GamedayStops12.add(createTransitRouteStop(scenario, Id.create("060100004703", TransitStopFacility.class),
+                1620.0d, 1680.0d)); //S+U Jannowitzbruecke
+        s3GamedayStops12.add(createTransitRouteStop(scenario, Id.create("060120005008", TransitStopFacility.class),
+                1740.0d, 1740.0d)); //S Ostbahnhof
 
 
         //create complete route
         TransitRoute s3GamedayRoute12 = transitScheduleFactory.createTransitRoute(s3GamedayRoute12Id, s3GamedayNetworkRoute12, s3GamedayStops12, "rail");
         //create depatures
         createDepartures(s3GamedayRoute12, transitSchedule, transitVehicles,
-                12 * 3600 + 16 * 60, 14 * 3600 + 1 * 60, 600,
-                "950827_", "pt_S3---10148_109_12_", "S-Bahn_veh_type", 0);
+                12 * 3600 + 3 * 60, 14 * 3600, 600,
+                "S3Ostbahnhof_", "pt_S3---10148_109_12_", "S-Bahn_veh_type", 0);
 
 
         s3Transitline.addRoute(s3GamedayRoute12);

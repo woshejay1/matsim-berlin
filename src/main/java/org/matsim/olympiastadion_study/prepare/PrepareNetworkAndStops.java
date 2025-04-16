@@ -32,7 +32,7 @@ public class PrepareNetworkAndStops {
         config.transit().setTransitScheduleFile(inputTransitScheduleFile);
 
         // Using the Plan-50000 Fans
-        String inputPlansFile = "G:/Masterarbeit/Plan/3.0/testing-50000-fans-12pm.plans.xml.gz";
+        String inputPlansFile = "G:/Masterarbeit/Plan/2.0/50000-fans-12pm-new.plans.xml.gz";
         config.plans().setInputFile(inputPlansFile);
 
         Scenario scenario = ScenarioUtils.loadScenario(config);
@@ -41,16 +41,12 @@ public class PrepareNetworkAndStops {
         TransitScheduleFactory transitScheduleFactory = transitSchedule.getFactory();
 
         //Get Node from Network
-        Node nodeZoologischeGarten = network.getNodes().get(Id.createNodeId("pt_060023201256"));
         Node nodeOlympiaStadion = network.getNodes().get(Id.createNodeId("pt_060025321431"));
 
         // Add the transit stops corresponding to the above nodes to the transitSchedule
-        transitSchedule.addStopFacility(createTransitStop("060023201256.1", nodeZoologischeGarten.getCoord(), false, transitScheduleFactory, "S+U Zoologischer Garten Bhf (Berlin)", "pt_950826", "060023201256"));
         transitSchedule.addStopFacility(createTransitStop("060025321431.1", nodeOlympiaStadion.getCoord(), false, transitScheduleFactory, "S Olympiastadion (Berlin)", "pt_950827", "060025321431"));
 
         // Add Link for the loop
-        //S+U Zoologischer Garten Bhf (loop)
-        network.addLink(createLink(nodeZoologischeGarten, nodeZoologischeGarten, network, "pt_950826"));
         //S Olympiastadion (loop)
         network.addLink(createLink(nodeOlympiaStadion, nodeOlympiaStadion, network, "pt_950827"));
 

@@ -13,7 +13,7 @@ import java.util.List;
 import static org.matsim.olympiastadion_study.prepare.Utilities.createDepartures;
 import static org.matsim.olympiastadion_study.prepare.Utilities.createTransitRouteStop;
 
-public class S3GamedayPlan2Schedule {
+public class S3GamedayWarschauerSchedule {
     public static void prepare(Scenario scenario, TransitSchedule transitSchedule, Vehicles transitVehicles) {
 
         TransitScheduleFactory transitScheduleFactory = transitSchedule.getFactory();
@@ -23,7 +23,7 @@ public class S3GamedayPlan2Schedule {
         TransitLine s3Transitline = transitSchedule.getTransitLines().get(Id.create("S3---10148_109", TransitLine.class));
 
 
-        //create route 12: S Olympia-Stadion-S+U Zoologischer Garten Bhf
+        //create route 12: S Olympia-Stadion-S+U Warschauer Str.
         Id<TransitRoute> s3GamedayRoute12Id = Id.create("S3---10148_109_12", TransitRoute.class);
 
         //create network routes
@@ -42,10 +42,12 @@ public class S3GamedayPlan2Schedule {
                         Id.createLinkId("pt_42522"), //S+U Berlin Hauptbahnhof-S+U Friedrichstr.Bhf
                         Id.createLinkId("pt_42523"), //S+U Friedrichstr.Bhf-S Hackescher Markt
                         Id.createLinkId("pt_42524"), //S Hackescher Markt-S+U Alexanderplatz Bhf
-                        Id.createLinkId("pt_42525") //S+U Alexanderplatz Bhf-S+U Jannowitzbruecke
+                        Id.createLinkId("pt_42525"), //S+U Alexanderplatz Bhf-S+U Jannowitzbruecke
+                        Id.createLinkId("pt_42526") //S+U Jannowitzbruecke-S Ostbahnhof
+
 
                 ),
-                Id.createLinkId("pt_42526") //S+U Jannowitzbruecke-S Ostbahnhof
+                Id.createLinkId("pt_42527") //S Ostbahnhof-S+U Warschauer Str. (Berlin)
         );
 
 
@@ -76,15 +78,17 @@ public class S3GamedayPlan2Schedule {
         s3GamedayStops12.add(createTransitRouteStop(scenario, Id.create("060100004703", TransitStopFacility.class),
                 1620.0d, 1680.0d)); //S+U Jannowitzbruecke
         s3GamedayStops12.add(createTransitRouteStop(scenario, Id.create("060120005008", TransitStopFacility.class),
-                1740.0d, 1740.0d)); //S Ostbahnhof
+                1740.0d, 1800.0d)); //S Ostbahnhof
+        s3GamedayStops12.add(createTransitRouteStop(scenario, Id.create("060120004623", TransitStopFacility.class),
+                1920.0d, 1920.0d)); //S+U Warschauer Str.
 
 
         //create complete route
         TransitRoute s3GamedayRoute12 = transitScheduleFactory.createTransitRoute(s3GamedayRoute12Id, s3GamedayNetworkRoute12, s3GamedayStops12, "rail");
         //create depatures
         createDepartures(s3GamedayRoute12, transitSchedule, transitVehicles,
-                12 * 3600 + 16 * 60, 14 * 3600 + 1 * 60, 600,
-                "950827_", "pt_S3---10148_109_12_", "S-Bahn_veh_type", 0);
+                12 * 3600 + 3 * 60, 14 * 3600, 600,
+                "S3Warschauer_", "pt_S3---10148_109_12_", "S-Bahn_veh_type", 0);
 
 
         s3Transitline.addRoute(s3GamedayRoute12);

@@ -13,7 +13,7 @@ import java.util.List;
 import static org.matsim.olympiastadion_study.prepare.Utilities.createDepartures;
 import static org.matsim.olympiastadion_study.prepare.Utilities.createTransitRouteStop;
 
-public class S3GamedayBase1Schedule {
+public class S3GamedayWestkreuzSchedule {
     public static void prepare(Scenario scenario, TransitSchedule transitSchedule, Vehicles transitVehicles) {
 
         TransitScheduleFactory transitScheduleFactory = transitSchedule.getFactory();
@@ -31,12 +31,11 @@ public class S3GamedayBase1Schedule {
                 Id.createLinkId("pt_950827"), //S Olympia-Stadion
                 List.of(
                         Id.createLinkId("pt_42538"), //S Olympiastadion-S Heerstr
-                        Id.createLinkId("pt_42539"), //S Heerstr-S Messe Süd
-                        Id.createLinkId("pt_42540") //S Messe Süd-S Westkreuz
+                        Id.createLinkId("pt_42539") //S Heerstr-S Messe Süd
 
 
                 ),
-                Id.createLinkId("pt_42541") //S Westkreuz-S Charlottenburg Bhf
+                Id.createLinkId("pt_42540") //S Messe Süd-S Westkreuz
         );
 
 
@@ -46,8 +45,7 @@ public class S3GamedayBase1Schedule {
                 0.0d, 0.0d)); //S Olympia-Stadion
         s3GamedayStops12.add(createTransitRouteStop(scenario, Id.create("060024102374", TransitStopFacility.class),
                 300.0d, 360.0d)); //S Westkreuz
-        s3GamedayStops12.add(createTransitRouteStop(scenario, Id.create("060024101336.1", TransitStopFacility.class),
-                480.0d, 480.0d)); //S Charlottenburg Bhf
+
 
 
         //create complete route
@@ -55,7 +53,7 @@ public class S3GamedayBase1Schedule {
         //create depatures
         createDepartures(s3GamedayRoute12, transitSchedule, transitVehicles,
                 12 * 3600 + 03 * 60, 14 * 3600 , 600,
-                "950827_", "pt_S3---10148_109_12_", "S-Bahn_veh_type", 0);
+                "S3Charlottenburg_", "pt_S3---10148_109_12_", "S-Bahn_veh_type", 0);
 
 
         s3Transitline.addRoute(s3GamedayRoute12);

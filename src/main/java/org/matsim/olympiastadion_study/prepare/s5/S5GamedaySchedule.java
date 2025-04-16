@@ -135,12 +135,12 @@ public class S5GamedaySchedule {
         TransitRoute s5GamedayRoute13 = transitScheduleFactory.createTransitRoute(s5GamedayRoute13Id, s5GamedayNetworkRoute13, s5GamedayStops13, "rail");
         //create depatures
         createDepartures(s5GamedayRoute13, transitSchedule, transitVehicles,
-                7 * 3600 + 50 * 60, 20 * 3600 + 30 * 60, 1200,
-                "S5Olympiastadion1_", "pt_S5---10157_109_13_", "S-Bahn_veh_type", 0);
+                7 * 3600 + 50 * 60, 24 * 3600 + 1 * 60, 1200,
+                "S5Gameday1_", "pt_S5---10157_109_13_", "S-Bahn_veh_type", 0);
 
         //create network routes
 
-        //create route 14: S Strausberg Nord-S Olympia-Stadion
+        //create route 14: S Olympia-Stadion-S Strausberg Nord
         Id<TransitRoute> s5GamedayRoute14Id = Id.create("S5---10157_109_14", TransitRoute.class);
 
         //create network routes
@@ -252,8 +252,8 @@ public class S5GamedaySchedule {
         //create complete route
         TransitRoute s5GamedayRoute14 = transitScheduleFactory.createTransitRoute(s5GamedayRoute14Id, s5GamedayNetworkRoute14, s5GamedayStops14, "rail");
         createDepartures(s5GamedayRoute14, transitSchedule, transitVehicles,
-                9 * 3600 + 21 * 60, 19 * 3600 + 41 * 60, 1200,
-                "S5Olypiastadion2_", "pt_S5---10157_109_14_", "S-Bahn_veh_type", 0);
+                9 * 3600 + 21 * 60, 24 * 3600 + 1 * 60, 1200,
+                "S5Gameday2_", "pt_S5---10157_109_14_", "S-Bahn_veh_type", 0);
 
         //create route 15: S Mahlsdorf Bhf-S Olympia-Stadion
         Id<TransitRoute> s5GamedayRoute15Id = Id.create("S5---10157_109_15", TransitRoute.class);
@@ -344,8 +344,8 @@ public class S5GamedaySchedule {
         TransitRoute s5GamedayRoute15 = transitScheduleFactory.createTransitRoute(s5GamedayRoute15Id, s5GamedayNetworkRoute15, s5GamedayStops15, "rail");
         //create depatures
         createDepartures(s5GamedayRoute15, transitSchedule, transitVehicles,
-                8 * 3600 + 11 * 60, 23 * 3600 + 1 * 60, 1200,
-                "S5Olympiastadion3_", "pt_S5---10157_109_15_", "S-Bahn_veh_type", 0);
+                8 * 3600 + 11 * 60, 24 * 3600 + 1 * 60, 1200,
+                "S5Gameday3_", "pt_S5---10157_109_15_", "S-Bahn_veh_type", 0);
 
         //create network routes
 
@@ -438,7 +438,7 @@ public class S5GamedaySchedule {
         TransitRoute s5GamedayRoute16 = transitScheduleFactory.createTransitRoute(s5GamedayRoute16Id, s5GamedayNetworkRoute16, s5GamedayStops16, "rail");
         createDepartures(s5GamedayRoute16, transitSchedule, transitVehicles,
                 9 * 3600 + 11 * 60, 24 * 3600 + 1 * 60, 1200,
-                "S5Olypiastadion4_", "pt_S5---10157_109_16_", "S-Bahn_veh_type", 0);
+                "S5Gameday4_", "pt_S5---10157_109_16_", "S-Bahn_veh_type", 0);
 
 
 
