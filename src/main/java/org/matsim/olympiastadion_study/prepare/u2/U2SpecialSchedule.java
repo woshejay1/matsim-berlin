@@ -5,22 +5,43 @@ import org.matsim.api.core.v01.Scenario;
 import org.matsim.core.population.routes.NetworkRoute;
 import org.matsim.core.population.routes.RouteUtils;
 import org.matsim.pt.transitSchedule.api.*;
-import org.matsim.vehicles.Vehicle;
 import org.matsim.vehicles.Vehicles;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import static org.matsim.olympiastadion_study.prepare.Utilities.createDepartures;
-import static org.matsim.olympiastadion_study.prepare.Utilities.createTransitRouteStop;
+import static org.matsim.olympiastadion_study.prepare.Utilities.*;
+import static org.matsim.olympiastadion_study.prepare.Utilities.removeDeparturesWithinTimeRange;
 
 public class U2SpecialSchedule {
 	public static void prepare(Scenario scenario, TransitSchedule transitSchedule, Vehicles transitVehicles){
 
 		TransitScheduleFactory transitScheduleFactory = transitSchedule.getFactory();
 
-		// prepare u2 schedule
-		TransitLine u2TransitLine = transitSchedule.getTransitLines().get(Id.create("U2---17514_400", TransitLine.class));
+		// prepare u2 gameday schedule
+		TransitLine u2Transitline = transitSchedule.getTransitLines().get(Id.create("U2---17514_400", TransitLine.class));
+
+
+		//Adjust Route 10 Ruhleben-Pankow
+		TransitRoute u2GamedayRoute10 = u2Transitline.getRoutes().get(Id.create("U2---17514_400_10", TransitRoute.class));
+		//remove Depature
+		removeDeparturesWithinTimeRange(u2GamedayRoute10, 12 * 3600, 14 * 3600);
+		//create Depature
+		//12:11:30-14:00 interval: 8 min
+		createDepartures(u2GamedayRoute10, transitSchedule, transitVehicles,
+				12 * 3600 + 03 * 60 + 30 , 14 * 3600, 480,
+				"950830_", "pt_U2---17514_400_10_", "U-Bahn_veh_type", 0);
+
+
+		//Adjust Route 13 Theodor-Heuss-Platz-Pankow
+		TransitRoute u2GamedayRoute13 = u2Transitline.getRoutes().get(Id.create("U2---17514_400_13", TransitRoute.class));
+		//remove Depature
+		removeDeparturesWithinTimeRange(u2GamedayRoute13, 12 * 3600, 15 * 3600);
+		//create Depature
+		//13:01-15:01 interval: 8 min
+		createDepartures(u2GamedayRoute13, transitSchedule, transitVehicles,
+				13 * 3600 + 1 * 60, 15 * 3600 + 1 * 60, 480,
+				"950831_", "pt_U2---17514_400_13_", "U-Bahn_veh_type", 0);
 
 
 		// create route 36: U Olympia-Stadion (Berlin)-U Deutsche Oper (Berlin)
@@ -63,11 +84,12 @@ public class U2SpecialSchedule {
 		TransitRoute u2GamedayRoute36 = transitScheduleFactory.createTransitRoute(u2GamedayRoute36Id, u2GamedayNetworkRoute36, u2SpecialStops36, "rail");
 
 		// create departures
+		// 12:09-13:00 interval: 8 min
 		createDepartures(u2GamedayRoute36, transitSchedule, transitVehicles,
-				12 * 3600 + 18 * 60, 12 * 3600 + 40 * 60, 600,
+				12 * 3600 + 9 * 60, 13 * 3600, 480,
 				"U2_DeutscheOper_", "pt_U2---17514_400_", "U-Bahn_veh_type", 0);
 
 
-		u2TransitLine.addRoute(u2GamedayRoute36);
+		u2Transitline.addRoute(u2GamedayRoute36);
 	}
 }

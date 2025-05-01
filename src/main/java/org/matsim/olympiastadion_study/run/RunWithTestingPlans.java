@@ -62,7 +62,7 @@ public class RunWithTestingPlans {
 
 		config.controler().setLastIteration(1);
 		config.controler().setOverwriteFileSetting(OutputDirectoryHierarchy.OverwriteFileSetting.overwriteExistingFiles);
-		config.controler().setOutputDirectory("G:/Masterarbeit/Output/Testing/dummy-test-5.6.1/Gameday2.0/Ostbahnhof");
+		config.controler().setOutputDirectory("G:/Masterarbeit/Output/Testing/dummy-test-5.6.1/Gameday2.0/U2Doper");
 
 		Scenario scenario = ScenarioUtils.loadScenario(config);
 		Controler controler = new Controler(scenario);
