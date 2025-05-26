@@ -27,7 +27,7 @@ public class U2SpecialSchedule {
 		//remove Depature
 		removeDeparturesWithinTimeRange(u2GamedayRoute10, 12 * 3600, 14 * 3600);
 		//create Depature
-		//12:11:30-14:00 interval: 8 min
+		//12:03:30-14:00 interval: 8 min
 		createDepartures(u2GamedayRoute10, transitSchedule, transitVehicles,
 				12 * 3600 + 03 * 60 + 30 , 14 * 3600, 480,
 				"950830_", "pt_U2---17514_400_10_", "U-Bahn_veh_type", 0);

@@ -27,7 +27,7 @@ public class PrepareBaseSchedule {
         Vehicles transitVehicles = scenario.getTransitVehicles();
 
 
-        //GamedayBase(S3 Special Olympiastadion-Charlottenburg 12:03-14:00 interval:10min/
+        //GamedayPlan1(S3 Special Olympiastadion-Charlottenburg 12:03-14:00 interval:10min/
         //            S5 Olympiastadion-Strausburg 9:21-24:01 interval:20min/
         //            S5 Olympiastadion-Mahlsdorf 9:11-24:01 interval:20min/
         //            U2 12:11-14:00 interval:8min
@@ -36,15 +36,29 @@ public class PrepareBaseSchedule {
 //        S3GamedayBaseSchedule.prepare(scenario, transitSchedule, transitVehicles);
 //        U2GamedaySchedule.prepare(transitSchedule, transitVehicles);
 
+        //GamedayPlan2 (S3 Special Olympiastadion-Westkreuz 12:03-14:00 interval:10min
+        //              S5 Olympiastadion-Strausburg 9:21-24:01 interval:20min/
+        //              S5 Olympiastadion-Mahlsdorf 9:11-24:01 interval:20min/
+        //              U2 12:11-14:00 interval:8min
+        //              U2 Special 12:09-13:00 interval:8min)
+//        S5GamedaySchedule.prepare(scenario, transitSchedule, transitVehicles);
+//        S3GamedayWestkreuzSchedule.prepare(scenario, transitSchedule, transitVehicles);
+//        U2GamedaySchedule.prepare(transitSchedule, transitVehicles);
 
-//      GamedayPlan1 (S3 Special Olympiastadion-Charlottenburg 12:03-14:00 interval:10min/
-//                    S5 Olympiastadion-Strausburg 9:21-24:01 interval:20min/
-//                    S5 Olympiastadion-Mahlsdorf 9:11-24:01 interval:20min/)
-//        S3GamedayBaseSchedule.prepare(scenario,transitSchedule, transitVehicles);
-//        S5GamedaySchedule.prepare(scenario,transitSchedule, transitVehicles);
-//
+        //GamedayPlan3 (S3 Special Olympiastadion-Charlottenburg 12:03-14:00 interval:10min/
+        //              S5 Olympiastadion-Strausburg 9:21-24:01 interval:20min/
+        //              S5 Olympiastadion-Mahlsdorf 9:11-24:01 interval:20min/
+//                      U2 12:11-14:00 interval:8min
+        //              U2 Special Olympiastadion-DeutscheOper 12:09-13:00 interval:8min
+//        S5GamedaySchedule.prepare(scenario, transitSchedule, transitVehicles);
+//        S3GamedayBaseSchedule.prepare(scenario, transitSchedule, transitVehicles);
+//        U2SpecialSchedule.prepare(scenario, transitSchedule, transitVehicles);
 
-        //GamedayPlan2 (S3 Special Olympiastadion-Ostbahnhof 12:13-14:00 interval:10min/
+
+
+
+
+        //GamedayPlan4 (S3 Special Olympiastadion-Ostbahnhof 12:13-14:00 interval:10min/
         //              S5 Olympiastadion-Strausburg 9:21-24:01 interval:20min/
         //              S5 Olympiastadion-Mahlsdorf 9:11-24:01 interval:20min/ )
 //                      U2 12:11-14:00 interval:8min
@@ -54,23 +68,16 @@ public class PrepareBaseSchedule {
 //        U2GamedaySchedule.prepare(transitSchedule, transitVehicles);
 
 
-        //GamedayPlan3 (S3 Special Olympiastadion-Westkreuz 12:03-14:00 interval:10min
-        //              S5 Olympiastadion-Strausburg 9:21-24:01 interval:20min/
-        //              S5 Olympiastadion-Mahlsdorf 9:11-24:01 interval:20min/
-        //              U2 12:11-14:00 interval:8min
-        //              U2 Special 12:09-13:00 interval:8min)
-//        S5GamedaySchedule.prepare(scenario, transitSchedule, transitVehicles);
-//        S3GamedayWestkreuzSchedule.prepare(scenario, transitSchedule, transitVehicles);
-//        U2GamedaySchedule.prepare(transitSchedule, transitVehicles);
 
 
-        //GamedayPlan4 (S3 Special Olympiastadion-Charlottenburg 12:03-14:00 interval:10min/
+
+        //GamedayPlan5 (S3 Special Olympiastadion-Westkreuz 12:03-14:00 interval:10min/
         //              S5 Olympiastadion-Strausburg 9:21-24:01 interval:20min/
         //              S5 Olympiastadion-Mahlsdorf 9:11-24:01 interval:20min/
 //                      U2 12:11-14:00 interval:8min
         //              U2 Special Olympiastadion-DeutscheOper 12:09-13:00 interval:8min
         S5GamedaySchedule.prepare(scenario, transitSchedule, transitVehicles);
-        S3GamedayBaseSchedule.prepare(scenario, transitSchedule, transitVehicles);
+        S3GamedayWestkreuzSchedule.prepare(scenario, transitSchedule, transitVehicles);
         U2SpecialSchedule.prepare(scenario, transitSchedule, transitVehicles);
 
 
